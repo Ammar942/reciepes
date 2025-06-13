@@ -1,3 +1,3 @@
 export default function RecipesHome() {
-  return <div>Welcome to Recipes</div>;
+  return <div className="bg-red-500">Welcome @@ to Recipes</div>;
 }

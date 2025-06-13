@@ -17,16 +17,21 @@ export default function CreateRecipe() {
 
   const submit = async (e) => {
     e.preventDefault();
+    const payload = {
+      ...form,
+      prepTimeMinutes: parseInt(form.prepTimeMinutes),
+      cookTimeMinutes: parseInt(form.cookTimeMinutes),
+      servings: parseInt(form.servings),
+    };
     const res = await fetch("/api/recipes", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
+      body: JSON.stringify(payload),
     });
     if (res.ok) {
-      alert("Created!");
       router.push("/recipes");
     } else {
-      alert("Failed");
+      console.log("ERRORRR");
     }
   };
 

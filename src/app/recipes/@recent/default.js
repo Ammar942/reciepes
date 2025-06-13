@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+
 async function fetchRecent() {
   const res = await fetch("https://dummyjson.com/recipes");
   const data = await res.json();
